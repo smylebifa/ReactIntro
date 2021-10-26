@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/main.css">
+  <title>Hello World</title>
+  <script src="js/react.js"></script>
+  <script src="js/react-dom.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="program"></div>
+
+  <script type="text/babel">
+
+  // const Block = () => {
+  //   return (
+  //     <div>
+  //       <h3>itDev</h3>
+  //       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+  //       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  //       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+  //       nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+  //       reprehenderit in voluptate velit esse cillum dolore eu fugiat
+  //       nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+  //       sunt in culpa qui officia deserunt mollit anim id est laborum.
+  //       </p>
+  //     </div>
+  //   );
+  // }
+
+  // class Game extends React.Component {
+  //   render() {
+  //     return (
+  //       <div>
+  //       <h1>{this.props.name}</h1>
+  //       <h2>{this.props.age}</h2>
+  //     </div>
+  //     )
+  //   }
+  // }
+
+  // class Task extends React.Component {
+  //
+  //   edit() {
+  //     alert("Нажата кнопка редактировать");
+  //   }
+  //
+  //   remove() {
+  //     alert("Нажата кнопка удалить")
+  //   }
+  //
+  //   render() {
+  //     return (
+  //       <div className="box">
+  //         <div className="text">{this.props.children}</div>
+  //         <button onClick={this.edit} className="btn light">Редактировать</button>
+  //         <button onClick={this.remove} className="btn red">Удалить</button>
+  //         </div>
+  //     );
+  //   }
+  // }
+
+
+  class Check extends React.Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      checked: false
+    };
+  }
+
+
+    render () {
+      let message;
+      if (this.state.checked) {
+        message = 'выбрано';
+      }
+      else {
+        message = 'не выбрано';
+      }
+      return (
+        <div>
+          <input type="checkbox" defaultChecked={this.state.checked} />
+          <p>Чекбокс {message}</p>
+        </div>
+      );
+    }
+  }
+
+
+
+  const app = document.getElementById("program");
+
+  ReactDOM.render(<Check />, app);
+
+  // ReactDOM.render (
+  //   <div className="field">
+  //     <Task>Task 1</Task>
+  //     <Task>Task 2</Task>
+  //     <Task>Task 3</Task>
+  //   </div>,
+  //   app
+  // )
+
+
+  // ReactDOM.render(
+  //   <div>
+  //     <Game name="Forza" age="18+" />
+  //     <Game name="Mortal Combat" age="16+" />
+  //     <Game name="GTA 5" age="18+" />
+  //   </div>,
+  //   app
+  // );
+
+
+
+  </script>
+
+</body>
+</html>
